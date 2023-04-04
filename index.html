@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="index">
+         <div class="header">
+            <div class="title" >温州市公安局检查站查控平台</div>
+            <div class="timer"></div>
+            <!-- 频道 -->
+            <div class="channel">
+              <div class="nav indexs">
+                <p>首页</p>
+              </div>
+              <div class="nav tabNav">
+                <p>频道</p>
+              </div>
+            </div>
+         </div>
+         <div class="aside">
+            <div class="aside_lt">
+              <!-- 勤务资源 -->
+              <div class="bor_lt naturalResources">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>勤务资源</p>
+                    </div>
+                    <div class="container service">
+                      <i class="active" style="--i:5">勤务等级</i>
+                      <i style="--i:5">勤力资源、类型</i>
+                    </div>
+                </div>
+                <div id="control_grade" class="width100 calc100"></div> 
+              </div>
+              <!-- 无感通行 -->
+              <div class="bor_lt">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>无感通行</p>
+                    </div>
+                    <div class="container noninductive">
+                      <i class="active" style="--i:5">时长</i>
+                      <i style="--i:5">Top3排名</i>
+                    </div>
+                </div>
+                <div id="city_lane_car" class="width100 calc100"></div>
+              </div>
+              <!-- 成效总览 -->
+              <div class="bor_lt">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>成效总览</p>
+                    </div>
+                    <div class="container effectOverview">
+                      <i class="active" style="--i:5">今日核查</i>
+                      <i style="--i:5">历史核查</i>
+                    </div>
+                </div>
+                <div class="width100 calc100 check_box">
+                  <div class="check">
+                      <div class="bor">
+                        <p><span class="fs_color">50</span>%</p>
+                        <p>工作总量(环比)</p>
+                      </div>
+                      <div>
+                        <p><span class="fs_color">50</span>件</p>
+                        <p>异常数</p>
+                      </div>
+                  </div>
+                  <div id="city_lane_number" class="height100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="aside_ct">
+              <div class="ct_top">
+                  <div class="titles">
+                      <div class="t-i">
+                        <img src="img/icon.png" alt="">
+                      </div>
+                      <div class="color">
+                        <p>站点信息</p>
+                      </div>
+                      <div class="container site">
+                        <i class="active" style="--i:5">站点数量</i>
+                        <i  style="--i:5">站点类型</i>
+                      </div>
+                  </div>                              
+                  <!-- 站点总数 -->
+                  <div class="aisle"></div>
+                  <!-- 圈层分类 -->
+                  <div class="carHum">
+                    <div class="titles">
+                      <div class="t-i">
+                        <img src="img/icon.png" alt="">
+                      </div>
+                      <div class="color">
+                        <p>圈层分类</p>
+                      </div>
+                      <div class="container circlesType">
+                        <i class="active" style="--i:5">圈层站点数量</i>
+                        <i  style="--i:5">圈层站点分类</i>
+                      </div>
+                  </div>      
+                  <div id="circles" class="width100 calc100"></div>  
+                  </div>    
+              </div>
+              <!-- 成效分类 -->
+              <div class="ct_bottom">
+                <div class="btm_lt" style="width:45%">
+                    <div class="titles">
+                        <div class="t-i">
+                          <img src="img/icon.png" alt="">
+                        </div>
+                        <div class="t-p color">
+                          <p>成效分类</p>
+                        </div>
+                        <div class="container effectType">
+                          <i class="active" style="--i:5">人员核查</i>
+                          <i style="--i:5">车辆核查</i>
+                          <i style="--i:5">物品核查</i>
+                      </div>
+                    </div>
+                    <div class="total calc100">
+                      <!-- <div class="total_item">
+                        <div class="total_box">
+                          <div class="bors">
+                            <div class="bors_btm"></div>
+                          </div>
+                            <p><span>42</span>件</p>
+                        </div>
+                        <div class="total_label">
+                          <p>历史总量</p>
+                        </div>
+                      </div>
+                      <div class="total_item">
+                        <div class="total_box">
+                          <div class="bors">
+                            <div class="bors_btm"></div>
+                          </div>
+                          <p><span>52</span>%</p>
+                        </div>
+                        <div class="total_label">
+                          <p>总量(环比)</p>
+                        </div>
+                      </div>
+                      <div class="total_item">
+                        <div class="total_box">
+                          <div class="bors">
+                            <div class="bors_btm"></div>
+                          </div>
+                          <p><span>44</span>件</p>
+                        </div>
+                        <div class="total_label">
+                          <p>异常数据</p>
+                        </div>
+                      </div> -->
+                    </div>
+                </div>
+                <div class="btm_lt" style="width:55%">
+                  <div class="titles">
+                      <div class="t-i">
+                        <img src="img/icon.png" alt="">
+                      </div>
+                      <div class="t-p color">
+                        <p>数据透视</p>
+                      </div>
+                      <div class="container dataPerspective">
+                          <i class="active" style="--i:5">异常人员</i>
+                          <i style="--i:5">区域车牌</i>
+                          <i style="--i:5">车辆分类</i>
+                          <i style="--i:5">物品分类</i>
+                      </div>
+                  </div>
+                  <div class="data_analyse">
+                    <div class="btnType">
+                      <button class="active">今日</button>
+                      <button>历史</button>
+                    </div>
+                    <div id="item_comparison"></div>
+                    <!-- <div id="control_grade" class="width100 calc100"></div> -->
+                  </div>               
+              </div>
+              </div>   
+            </div>
+            <div class="aside_rt">
+               <!-- 警护装备 -->
+               <div class="bor_lt">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>警护装备</p>
+                    </div>
+                </div>
+                <div id="county_bayonet_car" class="width100 calc100"></div>
+              </div>
+              <!-- 处置分类 -->
+              <div class="bor_lt">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>处置分类</p>
+                    </div>
+                </div>
+                <div id="county_lane_car" class="width100 calc100"></div>
+              </div>
+              <!-- 预警中心 -->
+              <div class="bor_lt">
+                <div class="titles">
+                    <div class="t-i">
+                      <img src="img/icon.png" alt="">
+                    </div>
+                    <div class="t-p color">
+                      <p>预警中心</p>
+                    </div>
+                    <div class="container keynote">
+                      <i  style="--i:5">重点人</i>
+                      <i class="active" style="--i:5">重点车</i>
+                    </div>
+                </div>
+                <div class="tableList">
+                  <table class="early-table">
+                      <thead>
+                          <tr>
+                              <th>预警类型</th>
+                              <th>时间</th>
+                              <th>地点</th>
+                              <th>概要</th>
+                          </tr>
+                      </thead>
+                      <tbody class="tbody1" style="margin-top: 0px;">
+                      <tr style="margin-top: 0px;">
+                              <td>违法经营大巴</td>
+                              <td>2023-03-17</td>
+                              <td>某市</td>
+                              <td>概要概要概要</td>
+                          </tr><tr style="margin-top: 0px;">
+                            <td>危化品车</td>
+                            <td>2023-03-17</td>
+                            <td>某市</td>
+                            <td>概要概要概要</td>
+                          </tr><tr style="margin-top: 0px;">
+                            <td>被盗抢车</td>
+                            <td>2023-03-17</td>
+                            <td>某市</td>
+                            <td>概要概要概要</td>
+                          </tr></tbody>
+                  </table>
+              </div>
+              </div>
+            </div>
+         </div>
+  </div>
+  <!-- 左侧抽屉 -->
+  <div class="drawers_mask">
+    <div class="drawers">
+      <h3>检查站平台</h3>
+      <div class="drawers_list">
+          <div>检查站1</div>
+          <div>检查站2</div>
+          <div>检查站3</div>
+          <div>检查站4</div>
+          <div>检查站5</div>
+      </div>
+    </div>
+  </div>
+  <!-- 人脸识别弹窗 -->
+  <div class="face_mask">
+    <div class="face_pop">
+      <i></i>
+      <i></i>
+      <div class="face_img">
+        <img src="" alt="">
+      </div>
+      <div class="detailed">
+        <p>姓名：某某某</p>
+        <p>职业：货车司机</p>
+      </div>
+      <div class="pop_btm"></div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="layui/layui-2.7.6.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/echarts-4.6.0.min.js"></script>
+<script type="text/javascript" src="js/timer.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/city_bayonet_car.js"></script>
+<script type="text/javascript" src="js/city_lane_car.js"></script>
+<script type="text/javascript" src="js/city_lane_number.js"></script>
+<script type="text/javascript" src="js/county_bayonet_car.js"></script>
+<script type="text/javascript" src="js/item_comparison.js"></script>
+<script type="text/javascript" src="js/control_grade.js"></script>
+<script type="text/javascript" src="js/ranking_Top3.js"></script>
+<script type="text/javascript" src="js/police_type_num.js"></script>
+<script type="text/javascript" src="js/circles.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>

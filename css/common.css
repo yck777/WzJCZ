@@ -1,0 +1,681 @@
+/* reset */
+    
+* {
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+/* // 声明字体 */
+
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+  /* 纵向滚动条*/
+  height: 2px;
+  /* 横向滚动条 */
+  background-color: transparent;
+}
+/* 字体统一白色 */
+
+.color-white {
+  color: #fff !important
+}
+/*定义滚动条轨道 内阴影*/
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: transparent;
+}
+/*定义滑块 内阴影*/
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-image: linear-gradient(to bottom, transparent -4%, #406c98 50%, transparent 100%);
+  border-radius: 10px;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  margin: 0;
+  padding: 0;
+}
+/* 初始化标签在所有浏览器中的margin、padding值 */
+
+fieldset,
+img {
+  border: 0 none;
+}
+/* 重置fieldset（表单分组）、图片的边框为0*/
+
+dl,
+ul,
+ol,
+menu,
+li {
+  list-style: none;
+}
+/* 重置类表前导符号为none,menu在HTML5中有效 */
+
+blockquote,
+q {
+  quotes: none;
+}
+/* 重置嵌套引用的引号类型 */
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+/* 重置嵌套引用*/
+
+input,
+select,
+textarea,
+button {
+  vertical-align: middle;
+}
+/* 重置表单控件垂直居中*/
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* 重置表单button按钮效果 */
+
+body {
+  background: #fff;
+}
+/* 重置body 页面背景为白色 */
+
+body,
+th,
+
+input,
+select,
+textarea,
+button {
+  font-size: 14px;
+  line-height: 1;
+  font-family: '微软雅黑', '黑体', '宋体';
+  color: #666;
+}
+/* 重置页面文字属性 */
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+/* 重置链接a标签 */
+
+a:active,
+a:hover {
+  text-decoration: none;
+}
+/* 重置链接a标签的鼠标滑动效果 */
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+/* 重置样式标签的样式 */
+
+caption {
+  display: none;
+}
+/* 重置表格标题为隐藏 */
+
+table {
+  width: 100% !important;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout:initial !important;
+}
+/* 重置table属性 */
+
+img {
+  vertical-align: top;
+}
+/* 图片在当前行内的垂直位置 */
+/* 页面设置 */
+/* 取消a标签点击后的虚线框 */
+
+a {
+  outline: none;
+}
+/* 设置页面文字等在拖动鼠标选中情况下的背景色与文字颜色 */
+/* ::selection {color: #fff;background-color: #4C6E78;}    
+::-moz-selection {color: #fff;background-color: #4C6E78;}  */
+/*清除浮动*/
+
+.clear {
+  clear: both;
+}
+/*清除浮动--推荐使用*/
+
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* @font-face {
+  font-family: 'titleFont';
+  src: url(./../font/ZCOOLKuaiLe-Regular.ttf);
+} */
+
+/* @font-face {
+  font-family: 'cabinSketch';
+  src: url(./../font/CabinSketch-Regular.ttf);
+  src: url(./../font/CabinSketch-Bold.ttf);
+} */
+
+/* @font-face {
+  font-family: 'pingFang';
+  src: url(./../font/PingFang-SC-Regular.ttf);
+} */
+
+html,
+body {
+  
+  width: 100%;
+  height: 100%;
+  font-family: 'pingFang', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* 所有数字字体 */
+.price-box p {
+  color: rgba(2, 248, 259);
+  font-size: 27px;
+  font-weight: bold;
+  padding: 0.2rem;
+}
+
+.yellows{
+  color: yellow !important;
+}
+.orange{
+  color: orange !important;
+}
+.greens{
+  color: #1eec36 !important;
+}
+.f-s-money {
+  padding: 0.2rem 0.7rem !important;
+}
+
+.font-weight{
+  font-weight: bold;
+}
+.h-101 {
+  margin-top: 1.5rem;
+}
+
+.small-gz-t {
+  width: 50% !important;
+}
+
+.flex-z-x {
+  width: 12% !important;
+}
+
+.f-l-left {
+  margin-right: 1rem;
+}
+
+.f-l-left img {
+  width: 5rem;
+  -webkit-filter: drop-shadow(1px 1px 6px rgba(2, 248, 249, .7));
+  filter: drop-shadow(1px 1px 6px rgba(2, 248, 249, .7));
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-f-column {
+  flex-direction: column;
+}
+
+.f-j-c-c {
+  justify-content: center;
+}
+
+.f-a-i-c {
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.over-s {
+  overflow-y: scroll;
+}
+
+.m-tb {
+  margin: 1.4rem 0 !important;
+}
+
+.m-lr {
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+.w-49 {
+  width: 49%;
+}
+
+.w-500 {
+  margin-left: 3.5rem;
+}
+
+.w-30 {
+  width: 30%;
+}
+.mar-lt{
+  margin-left: 3.33%;
+}
+.w-100 {
+  width: 100%;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.h-49 {
+  height: 49%;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-35 {
+  height: 35%;
+}
+
+.h-24 {
+  height: 18%;
+}
+
+.h-75 {
+  height: 75%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.f-a-c-end {
+  align-content: flex-end;
+}
+
+.bor1 {
+  border: 1px solid rgba(2, 248, 249);
+  box-shadow: 1px 1px 5px 1px rgba(2, 248, 249, .7);
+}
+
+.f-j-c-s-b {
+  justify-content: space-between;
+}
+
+.f-j-c-s-a {
+  justify-content: space-around;
+}
+
+.f-j-c-s-e {
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.t-a-c {
+  text-align: center;
+}
+
+.p-f-cabin {
+  font-size: 1.5rem;
+  color: rgba(2, 248, 249);
+}
+
+.m-b-05 {
+  margin-bottom: 0.5rem;
+}
+
+.p-f-cabin span {
+  font-family: 'pingFang';
+  font-size: 1rem;
+}
+
+.p-f-title {
+  font-size: 1rem;
+  color: #fff
+}
+
+.f-s-14 {
+  font-size: 0.875rem;
+}
+
+.f-s-18 {
+  font-size: 1.125rem !important;
+}
+
+.f-s-36 {
+  font-size: 2.25rem !important;
+}
+
+.w-80 {
+  width: 80px;
+}
+
+.lay-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.tip {
+  background-color: #18d421;
+  width: 70%;
+  height: 12px;
+  border-radius: 30px;
+  display: block;
+  border: 2px solid rgb(72, 255, 0);
+}
+
+.bg-1 {
+  background-color: rgba(21, 47, 106, 0.5);
+}
+
+.bg-2 {
+  background: -webkit-linear-gradient(left, transparent -4%, #084e93 50%, transparent 100%);
+}
+
+.c-fff {
+  color: rgba(2, 248, 255);
+}
+
+.c-left {
+  margin-left: 1rem;
+}
+
+.c-fff img {
+  filter: drop-shadow(1px 1px 6px rgba(2, 248, 249, .5));
+  -webkit-filter: drop-shadow(1px 1px 6px rgba(2, 248, 249, .5));
+}
+
+.pad-5 {
+  padding: 0.3rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.pad-bottom::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(1, 196, 247, 1) 0%, rgba(1, 196, 247, 0.9) 10%, rgba(1, 196, 247, 0.8) 20%, rgba(1, 196, 247, 0.7) 30%, rgba(1, 196, 247, 0.6) 40%, rgba(1, 196, 247, 0.5) 50%, rgba(1, 196, 247, 0.4) 60%, rgba(1, 196, 247, 0.3) 70%, rgba(1, 196, 247, 0.2) 80%, rgba(1, 196, 247, 0.1) 90%, rgba(1, 196, 247, 0) 100%);
+  width: 100%;
+  height: 3px;
+  content: "";
+}
+.m-b-03 {
+  margin-bottom: 0.3rem;
+}
+
+.m-b-16 {
+  margin-bottom: 1rem;
+}
+
+.p-a0 {
+  padding: 0 !important;
+}
+
+.m-a0 {
+  margin: 0 !important;
+}
+
+.bor-r {
+  border-radius: 5px;
+}
+
+.bor-1-b {
+  border: 1px solid #152f6a;
+}
+
+.m-h-120 {
+  min-height: 110px;
+}
+
+.o-flag {
+  position: relative;
+}
+
+.p-a {
+  position: absolute;
+}
+
+.over-h {
+  overflow: hidden;
+}
+
+.h-auto {
+  height: auto !important;
+}
+
+.c-00FFFF {
+  color: #00ffff;
+}
+
+.f-weight {
+  font-weight: 600;
+}
+
+.p-a-1rem {
+  padding: 1rem;
+}
+
+.m-a-1rem {
+  margin: 1rem;
+}
+
+.m-l-1rem {
+  margin-left: 1rem;
+}
+
+.bg-img-s-contain {
+  background-size: contain;
+}
+
+.bg-img-r-no {
+  background-repeat: no-repeat;
+}
+
+.bg-img-r-po {
+  background-position: center;
+}
+
+.num-div {
+  position: relative;
+}
+
+.FF9624 {
+  color: rgb(0,255,127);
+}
+
+.FFDE1F {
+  color: #ffde1f;
+}
+
+.c00D6CB {
+  color: #00d6cb;
+}
+
+.width100{
+  width: 100% !important;
+}
+.height49 {
+  height: 49%;
+}
+.height100 {
+  height: 100% !important;
+}
+.c-mid-text {
+  font-size: 1.2rem !important;
+}
+
+.price-unit {
+  font-size: 1rem;
+  color: rgba(2, 248, 259);
+  padding: 0.4rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-deta-flex3 {
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.table-deta-direction2 {
+  margin-left: -3rem;
+}
+
+.index-left {
+  margin-left: -3rem !important;
+}
+
+.d-q-left {
+  margin-left: 1rem !important;
+}
+
+.d-q-right {
+  margin-left: -1.5rem !important;
+}
+
+.pad-center {
+  margin-left: -23rem;
+  color: #fff;
+}
+.make {
+  margin-left: -6rem
+}
+.table-center {
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+}
+.table-title {
+  font-size: 1rem;
+  color: #fff;
+  /* font-family: 'titleFont'; */
+  /* background-image: url(./../img/3tiao.png); */
+  text-indent: 1.5rem;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  /* 左边亮右边透明 */
+  background: linear-gradient(to right, rgba(1, 196, 247, 0.5) 0%, rgba(1, 196, 247, 0.5) 10%, rgba(1, 196, 247, 0.5) 20%, rgba(1, 196, 247, 0.4) 30%, rgba(1, 196, 247, 0.3) 40%, rgba(1, 196, 247, 0.2) 50%, rgba(1, 196, 247, 0.1) 60%, rgba(1, 196, 247, 0.1) 70%, rgba(1, 196, 247, 0.1) 80%, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  position: relative;
+}
+
+.flex-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.table-deta-flex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.t-d-flex{
+  flex-wrap: wrap;
+}
+
+.table-deta-direction {
+  flex-direction: column;
+}
+
+.table-deta-j-content {
+  justify-content: space-around !important;
+}
+
+.table-center3 {
+  width: 36%;
+}
+
+/* 按钮颜色 */
+.look_over{
+  border-radius: 20px;
+  background-color: #00d6cb;
+  color: white;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  padding: 0 1rem 0 1rem;
+  height: 1.25rem;
+  text-indent:0;
+}
+.look_over:hover{
+  background-color: rgba(0, 214, 203,.7);
+}
+.look_over p{
+  text-align: center;
+}

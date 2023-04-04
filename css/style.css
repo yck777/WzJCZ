@@ -1,0 +1,457 @@
+#index {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../img/bg.jpg') no-repeat center center;
+  background-size: 100% 100%;
+}
+.w100 {
+  width: 100%;
+}
+.color {
+  color: white !important;
+}
+.color1 {
+  color: #49e0d3;
+}
+.color2 {
+  color: #ffc739;
+}
+.color3 {
+  color: #38c3f0;
+}
+.calc100 {
+  height: calc(100% - 5vh);
+}
+.faceColor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #00dbff 0, #00ffb7 50%, #00ff8c 100%);
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.relative {
+  position: relative;
+}
+.img_active {
+  border: 1px solid red;
+}
+.active {
+  color: #00dbff !important;
+}
+.fs_color {
+  color: #00dbff;
+  font-size: 26px;
+  font-weight: bold;
+}
+.bor {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+}
+.bor::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent -4%, #00dbff 50%, transparent 100%);
+}
+.header {
+  height: 7vh;
+  width: 100%;
+  background: url('../img/top.png') no-repeat center;
+  background-size: 100% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header .title {
+  background: #03aee4 linear-gradient(-135deg, transparent 25%, transparent 40%, #00dbff 40%, #00dbff 60%, transparent 60%, transparent);
+  background-size: 60px 60px;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: highlights 3s linear infinite;
+  font-size: 22px;
+  font-weight: bold;
+}
+.header .timer {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  color: white;
+}
+.header .channel {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  display: flex;
+}
+.header .channel .nav {
+  width: 95px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  background-color: #1b2a4b;
+  border: 2px solid #16466b;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  justify-content: center;
+  margin-left: 20px;
+}
+.header .channel .nav:hover {
+  background-color: rgba(0, 219, 255, 0.1);
+  color: #00dbff;
+}
+.drawers_mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.drawers_mask .drawers {
+  min-width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background: rgba(27, 42, 75);
+}
+.drawers_mask .drawers h3 {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(92deg, #0072ff, #00eaff 48.85254%, #01aaff);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+.drawers_mask .drawers .drawers_list {
+  height: calc(100% - 45px);
+}
+.drawers_mask .drawers .drawers_list div {
+  padding: 20px;
+  color: #03aee4;
+  border-bottom: 1px solid #2a4b87;
+}
+.drawers_mask .drawers .drawers_list div:hover {
+  background-color: #273e70;
+}
+.aside {
+  padding: 20px;
+  height: calc(100% - 7vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.aside .aside_lt,
+.aside .aside_rt {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.aside .aside_ct {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ct_top {
+  position: relative;
+  width: 100%;
+  height: 64%;
+}
+.ct_top .titles {
+  width: 90%;
+  height: 5vh;
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.time-p {
+  position: relative;
+}
+.time-p::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #00dbff;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transition: all 0.8s;
+}
+.time-p:hover:before {
+  left: 0%;
+  width: 100%;
+}
+.ct_bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 32%;
+  background: rgba(27, 42, 75, 0.25);
+}
+.ct_bottom .btm_lt {
+  width: 50%;
+  height: 100%;
+}
+.ct_bottom .btm_lt .titles {
+  width: 90%;
+  height: 5vh;
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #1c304c;
+}
+.ct_bottom .btm_lt .titles::before {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  left: 0;
+  width: 4px;
+  height: 2px;
+  background-color: #37cfff;
+}
+.ct_bottom .btm_lt .titles::after {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  right: 0;
+  width: 4px;
+  height: 2px;
+  background-color: #37cfff;
+}
+.bor_lt {
+  position: relative;
+  width: 100%;
+  height: 32%;
+  background: rgba(27, 42, 75, 0.25);
+}
+.bor_lt .titles {
+  width: 90%;
+  height: 5vh;
+  margin: 0 5%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1c304c;
+  position: relative;
+}
+.bor_lt .titles::before {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  left: 0;
+  width: 4px;
+  height: 2px;
+  background-color: #37cfff;
+}
+.bor_lt .titles::after {
+  position: absolute;
+  content: '';
+  bottom: -1px;
+  right: 0;
+  width: 4px;
+  height: 2px;
+  background-color: #37cfff;
+}
+.bor_lt .titles .t-p {
+  position: relative;
+}
+@keyframes highlights {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 130% 0;
+  }
+}
+.site-demo-laydate {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  z-index: 9;
+  display: none;
+}
+.layui-laydate,
+.layui-laydate-hint {
+  border: 1px solid #0abdff !important;
+  background-color: #151515 !important;
+}
+.layui-laydate-header {
+  border-bottom: 1px solid #0abdff !important;
+}
+.layui-laydate,
+.layui-laydate-content th,
+.layui-laydate-preview,
+.layui-laydate-header i {
+  color: #fff !important;
+}
+.layui-laydate-footer span:hover,
+.layui-laydate-content td {
+  color: #0abdff !important;
+}
+.layui-laydate-footer span {
+  background-color: transparent !important;
+}
+.layui-laydate-content .laydate-day-next,
+.layui-laydate-content .laydate-day-prev {
+  color: #d2d2d2 !important;
+}
+.layui-laydate-content td:hover,
+.layui-laydate-list li:hover {
+  background-color: #214a5d !important;
+}
+.layui-laydate-header span:hover {
+  color: #0abdff !important;
+}
+.container {
+  /* 弹性布局 水平、垂直居中 */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+.container i {
+  /* 相对定位 */
+  position: relative;
+  /* 将a元素转为块级元素，不然无法设置宽和高 */
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  margin: 5px;
+  padding: 0 6px;
+  font-size: 14px;
+  /* 这里加个动画过渡 */
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  color: white;
+}
+.container i::before,
+.container i::after {
+  /* 将两个伪元素的相同样式写在一起 */
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #00dbff;
+  /* 这里也加一个动画过渡 */
+  /* 最后的0.3s是延迟时间 */
+  transition: all 0.2s ease-in-out 0.3s;
+}
+.container i::before {
+  top: 0;
+  left: 0;
+  /* 删除左边元素的右、下边框 */
+  border-right: 0;
+  border-bottom: 0;
+}
+.container i::after {
+  right: 0;
+  bottom: 0;
+  /* 删除右边元素的左、上边框 */
+  border-top: 0;
+  border-left: 0;
+}
+.container i:hover {
+  background-color: rgba(0, 219, 255, 0.8);
+  color: #fff !important;
+  /* 添加发光效果和倒影 */
+  box-shadow: 0 0 50px #00dbff;
+  /* below是下倒影 1px是倒影和元素相隔的距离 最后是个渐变颜色 */
+  -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+  /* 这里我们为以上属性设置一下延迟时间 */
+  transition-delay: 0.3s;
+}
+.container i:hover::before,
+.container i:hover::after {
+  width: 58px;
+  height: 38px;
+  /* 这里不需要延迟 */
+  transition-delay: 0s;
+}
+.tableList {
+  /* flex: 1; */
+  color: #1698d0;
+  height: calc(100% - 5vh);
+  overflow: hidden;
+  margin-top: 10px;
+}
+.tableList .early-table {
+  width: 100%;
+  display: table;
+  table-layout: auto;
+  height: 100%;
+}
+.tableList .early-table thead {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+.tableList .early-table thead th {
+  color: white;
+}
+.tableList tr {
+  display: flex;
+  height: 2vw;
+  width: 100%;
+  align-items: center;
+  color: white;
+  justify-content: center;
+}
+.tableList td,
+.tableList th {
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tableList .tbody1 {
+  overflow-y: auto;
+  height: calc(100% - 3vw);
+  width: 100%;
+  display: block;
+  font-size: 14px;
+}
+.tableList .tbody1 tr:hover {
+  box-shadow: inset 0 0 15px rgba(2, 248, 255);
+  cursor: pointer;
+}
+.tableList .tbody1 tr td {
+  color: #00e0ff;
+}

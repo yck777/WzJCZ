@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>检查站</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="layui/css/layui.css">
+  <link rel="stylesheet" href="css/checkpoint.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div id="index">
+    <div class="header">
+      <div class="title">温州市公安局检查站查控平台</div>
+      <div class="timer"></div>
+      <!-- 频道 -->
+      <div class="channel">
+        <div class="nav indexs">
+          <p>首页</p>
+        </div>
+        <div class="nav tabNav">
+          <p>频道</p>
+        </div>
+      </div>
+   </div>
+   <div class="aside">
+      <div class="aside_lt">
+         <!-- 查控战果 -->
+         <div class="bor_lt">
+          <div class="titles relative">
+              <div class="t-i">
+                <img src="img/icon.png" alt="">
+              </div>
+              <div class="t-p color">
+                <p>查控方式</p>
+              </div>       
+          </div>
+        <div id="inspectionManner" class="width100 calc100"></div>
+        </div>
+         <!-- 卡口过车 -->
+         <div class="bor_lt">
+          <div class="titles">
+              <div class="t-i">
+                <img src="img/icon.png" alt="">
+              </div>
+              <div class="t-p color">
+                <p>卡口过车</p>
+              </div>
+          </div>
+          <div class="bayonet_car width100">
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+            <div class="bayonet_car_item">
+              <div class="item_img">
+                <img src="" alt="">
+                <div class="license_plate">
+                  <p>11111</p>
+                </div>
+              </div>
+              <p class="times">2023-03-14</p>
+            </div>
+          </div>
+        </div>
+        <!-- 物品查控/查控量统计 -->
+        <div class="bor_lt">
+          <div class="titles">
+            <div class="t-i">
+              <img src="img/icon.png" alt="">
+            </div>
+            <div class="t-p color">
+              <p>视频与物品</p>
+            </div>
+            <div class="container statistics">
+              <i class="active" style="--i:5">区域视频</i>
+              <i style="--i:5">查控量统计</i>
+            </div>
+        </div>
+        <div class="width100 vidoes">
+            <video src="img/move.mp4" controls></video>     
+        </div>
+          <div id="article_custody" class="width100 calc100"></div>
+         </div>      
+      </div>
+      <div class="aside_ct">
+        <!-- 检查通道 -->
+        <div class="ct_top">
+            <div class="titles">
+                <div class="t-i">
+                  <img src="img/icon.png" alt="">
+                </div>
+                <div class="t-p color">
+                  <p>检查通道</p>
+                </div>
+                <!-- 检查通道 -->
+              <div class="time-p color" style="margin-left: 20px;">
+                <p>中间车道</p>
+              </div>
+              <div class="skip time-p">深入核查</div>   
+            </div>
+             <!--人脸识别  -->
+            <div class="face_discriminate width100">
+                <!-- 左侧人脸 -->
+                <div class="face">
+                  <div class="face_box">
+                    <i></i>
+                    <div class="face_img">
+                      <img src="" alt="">
+                    </div>
+                    <div class="faceColor">1</div>
+                  </div>
+                  <p>暂无数据</p>
+                </div>
+                <div class="discriminate">
+                  <div class="discriminate_item">
+                    <p>实时人脸</p>
+                    <div class="item_bor">
+                      <div class="item_img img_active" >
+                        <img src="" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="discriminate_item">
+                    <p>照片对比</p>
+                    <div class="item_bor">
+                      <div class="item_img">
+                        <img src="" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- 物品查控录入 -->
+            <div class="article">
+              <div class="titles">
+                <div class="t-i">
+                  <img src="img/icon.png" alt="">
+                </div>
+                <div class="t-p color">
+                  <p>物品查控录入</p>
+                </div>
+            </div>      
+            <form class="layui-form layui-forms" action="">
+              <div class="form_box layui-entry">
+                <div class="layui-form-item" style="width:45%" >
+                  <label class="layui-form-label">姓名</label>
+                  <div class="layui-input-block layui-upload">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input layui-user">
+                    <button type="button" class="layui-btn" id="test1">
+                     <i class="layui-icon">&#xe67c;</i>上传人员图片
+                   </button>
+                   </div>    
+                </div>
+                <div class="layui-form-item" >
+                  <label class="layui-form-label">身份证</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入身份证号" autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">车牌号</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入车牌号" autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">类型</label>
+                  <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                      <option value=""></option>
+                      <option value="0">枪支</option>
+                      <option value="1">弹药</option>
+                    </select>
+                  </div>
+                </div>            
+                <div class="layui-form-item">
+                  <label class="layui-form-label">物品名称</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入物品名称" autocomplete="off" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <label class="layui-form-label">数量</label>
+                  <div class="layui-input-block">
+                    <input type="text" name="title" required  lay-verify="required" placeholder="请输入数量" autocomplete="off" class="layui-input">
+                  </div>
+                </div>            
+            </div>
+            </form>
+            </div>
+        </div>
+        <!-- 核查异常数据 -->
+        <div class="bor_lt">
+          <div class="titles">
+            <div class="t-i">
+              <img src="img/icon.png" alt="">
+            </div>
+            <div class="t-p color">
+              <p>核查异常数据</p>
+            </div>
+            <div class="container">
+              <i class="active" style="--i:5">核查异常数据</i>
+              <i style="--i:5">预警核查数据</i>
+              <i style="--i:5">黑名单核查数据</i>
+              <i style="--i:5">白名单通行数据</i>
+            </div>
+        </div>   
+        <div class="tableList">
+          <table class="early-table">
+              <thead>
+                  <tr>
+                      <th>核查时间</th>
+                      <th>车牌</th>
+                      <th>核录结果</th>
+                      <th>姓名</th>
+                      <th>身份证</th>
+                      <th>核录结果</th>
+                      <th>处置结果</th>
+                  </tr>
+              </thead>
+              <tbody class="tbody1" style="margin-top: 0px;">
+              <tr style="margin-top: 0px;">
+                      <td>2022-03-14</td>
+                      <td>浙A123456</td>
+                      <td>正常</td>
+                      <td>某某某</td>
+                      <td>123456789013434567</td>
+                      <td>存储</td>
+                      <td>放行</td>
+                  </tr>
+                  <tr style="margin-top: 0px;">
+                    <td>2022-03-14</td>
+                      <td>浙A123456</td>
+                      <td>正常</td>
+                      <td>某某某</td>
+                      <td>123456789013434567</td>
+                      <td>存储</td>
+                      <td>放行</td>
+                  </tr>
+                  <tr style="margin-top: 0px;">
+                      <td>2022-03-14</td>
+                      <td>浙A123456</td>
+                      <td>正常</td>
+                      <td>某某某</td>
+                      <td>123456789013434567</td>
+                      <td>存储</td>
+                      <td>放行</td>
+                  </tr>
+                </tbody>
+          </table>
+      </div>
+    </div>  
+      </div>
+        <div class="aside_rt">
+           <!-- 查控数据 -->
+          <div class="bor_lt" style="height:15%">
+            <div class="titles">
+                <div class="t-i">
+                  <img src="img/icon.png" alt="">
+                </div>
+                <div class="t-p color">
+                  <p>查控数据</p>
+                </div>
+            </div>
+            <div class="dataProportion width100 calc100">
+              <div class="dataProportionItem">
+                <div class="data-row color1">
+                    <p>10<span>辆</span></p>
+                    <p>4<span>%</span></p>
+                  </div>
+                  <div>
+                    过车查控
+                  </div>
+               </div>
+               <div class="dataProportionItem">
+                <div class="data-row color2">
+                    <p>10<span>件</span></p>
+                    <p>8<span>%</span></p>
+                  </div>
+                  <div>
+                    预警查控
+                  </div>
+               </div>
+               <div class="dataProportionItem">
+                <div class="data-row color3">
+                    <p>5<span>件</span></p>
+                    <p>7<span>%</span></p>
+                  </div>
+                  <div>
+                    黑名单查控
+                  </div>
+               </div>
+            </div>
+          </div>    
+          <!-- 值守人员 -->
+          <div class="bor_lt"  style="height:35%">
+           <div class="titles">
+               <div class="t-i">
+                 <img src="img/icon.png" alt="">
+               </div>
+               <div class="t-p color">
+                 <p>值守人员</p>
+               </div>
+           </div>
+           <form class="layui-form layui-forms" action="">
+            <div class="form_box">
+              <div class="layui-form-item">
+                <label class="layui-form-label">带班民警</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">警号</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入警号" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">联系短号</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入短号" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">警力数</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item" style="width:60%">
+                <label class="layui-form-label">身份证</label>
+                <div class="layui-input-block">
+                  <input type="text" name="title" required  lay-verify="required" placeholder="请输入身份证号" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item" style="width:100%">
+                <span class="label">值守开始时间：</span>
+                <span class="color">2023-03-14</span>
+              </div>
+              <div class="layui-form-item"  style="width:100%">
+                <span class="label">值守结束时间：</span>
+                <span class="color">2023-03-14</span>
+              </div>
+          </div>
+          </form>
+         </div>
+           <!-- 比对库 -->
+           <div class="bor_lt" style="height:12%">
+            <div class="titles">
+                <div class="t-i">
+                  <img src="img/icon.png" alt="">
+                </div>
+                <div class="t-p color">
+                  <p>比对库</p>
+                </div>
+            </div>
+            <form class="layui-form" action="">
+             <div class="layui-form-item layui-form-row ">
+               <div class="layui-input-block">
+                 <input type="radio" name="contrast" value="省厅人车核录" title="省厅人车核录">
+                 <input type="radio" name="contrast" value="温州风警库" title="温州风警库">
+                 <input type="radio" name="contrast" value="圈层布控平台" title="圈层布控平台">
+               </div>
+             </div>
+            </form>
+          </div>
+         <!-- 社会治安防控响应等级、勤务等级 -->
+         <div class="bor_lt" >
+            <div class="titles">
+               <div class="t-i">
+                 <img src="img/icon.png" alt="">
+               </div>
+               <div class="t-p color">
+                 <p>社会治安防控响应等级</p>
+               </div>
+               <div class="container grade">
+                <i class="active" style="--i:5">社会治安防控响应等级</i>
+                <i style="--i:5">勤务等级</i>
+              </div>
+           </div>
+           <div class="chart_form">
+            <form class="layui-form" action="">
+              <div class="layui-form-item layui-form-row">
+                <div class="layui-input-block layui-respond">
+                  <input type="radio" name="response" value="一级响应+" title="一级响应+">
+                  <input type="radio" name="response" value="一级响应" title="一级响应">
+                  <input type="radio" name="response" value="二级响应" title="二级响应">
+                  <input type="radio" name="response" value="三级响应" title="三级响应">
+                </div>
+                <div class="layui-input-block layui-duty" style="display: none;">
+                  <input type="radio" name="inspection" value="一级勤务" title="一级勤务">
+                  <input type="radio" name="inspection" value="二级勤务" title="二级勤务">
+                  <input type="radio" name="inspection" value="三级勤务" title="三级勤务">
+                </div>
+              </div>
+             </form>
+            <div id="prevention_respond" class="width100"></div>
+          </div>
+         </div>  
+      </div>
+   </div>
+  </div>
+</body>
+<script type="text/javascript" src="layui/layui-2.7.6.js"></script>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/echarts-4.6.0.min.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/inspectionManner.js"></script>
+<script type="text/javascript" src="js/inspectionStatistics.js"></script>
+<script type="text/javascript" src="js/prevention_respond.js"></script>
+<script type="text/javascript" src="js/article_custody.js"></script>
+<script type="text/javascript" src="js/checkpoint.js"></script>
+<script type="text/javascript" src="js/timer.js"></script>
+</html>
